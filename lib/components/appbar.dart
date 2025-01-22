@@ -7,11 +7,10 @@ class SmartAppBar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Color(0xFFE9ECEF),
       title: Text("SmartDND",style:GoogleFonts.poppins(fontWeight: FontWeight.bold)),
       leading: Icon(Icons.dnd_forwardslash,color: Colors.black,weight: 20.0,),
       actions: <Widget>[
-        IconButton(onPressed: ()=>null, icon:Icon(Icons.account_circle,color: Colors.black,weight: 20,))
+        IconButton(onPressed: ()=>null, icon:Icon(Icons.account_circle,color: Colors.black,weight: 20,size: 30.0,))
       ],
     );
   }

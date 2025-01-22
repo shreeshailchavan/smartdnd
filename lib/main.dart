@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:smartdnd/components/appbar.dart';
+import 'package:smartdnd/components/card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,6 +37,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  Map<String,dynamic> data = {
+    "title":"Add Device",
+    "desc":"Have a pre-flashed that is ready to be connected to EchoBlock?",
+    "color":Colors.white54,
+    "bg":Colors.black45,
+    "icon":Icon(Icons.add,color: Colors.grey,size: 40,),
+    "font":GoogleFonts.roboto(fontSize: 15,fontWeight: FontWeight.w300,color: Colors.white)
+  };
 
   void _incrementCounter() {
     setState(() {
@@ -44,25 +54,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+
    
     return Scaffold(
       appBar: SmartAppBar(),
-      body: Center(
-       
-        child: Column(
+      body:  Column(
         
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            CardComponent(data: data,)
           ],
         ),
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
