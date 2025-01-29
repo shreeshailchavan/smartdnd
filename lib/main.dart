@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smartdnd/components/appbar.dart';
 import 'package:smartdnd/components/card.dart';
+import 'package:smartdnd/components/registerform.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
+      routes:{
+        '/':(context) => UserRegistrationForm(),
+        '/home':(context) => MyHomePage(title: "SmartDND")
+      }
     );
   }
 }
@@ -42,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
     "desc":"Have a pre-flashed that is ready to be connected to EchoBlock?",
     "color":Colors.white54,
     "bg":Colors.black45,
-    "icon":Icon(Icons.add,color: Colors.grey,size: 40,),
+    "icon":Icon(Icons.add,color: Colors.grey,size: 45,),
     "font":GoogleFonts.roboto(fontSize: 15,fontWeight: FontWeight.w300,color: Colors.white)
   };
 
@@ -54,15 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-
-
-   
     return Scaffold(
       appBar: SmartAppBar(),
       body:  Column(
         
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
+            SizedBox(height: 10.0,),
             CardComponent(data: data,)
           ],
         ),
