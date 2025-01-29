@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smartdnd/components/appbar.dart';
 import 'package:smartdnd/components/card.dart';
 import 'package:smartdnd/components/registerform.dart';
+import 'package:smartdnd/components/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,10 +23,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
 
       routes:{
-        '/':(context) => UserRegistrationForm(),
+        '/':(context) => SplashScreen(),
         '/home':(context) => MyHomePage(title: "SmartDND")
       }
     );
