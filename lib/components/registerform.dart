@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:reactive_forms/reactive_forms.dart';
-import 'package:smartdnd/main.dart';
 import 'package:smartdnd/utilities/registrationform.dart';
 
 class RegisterForm extends StatelessWidget implements PreferredSizeWidget {

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smartdnd/components/appbar.dart';
 import 'package:smartdnd/components/card.dart';
-import 'package:smartdnd/components/registerform.dart';
 import 'package:smartdnd/components/splashscreen.dart';
 
 void main() {
@@ -62,21 +61,26 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: SmartAppBar(),
-      body:  Column(
-        
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: 10.0,),
-            CardComponent(data: data,)
-          ],
-        ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), 
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,),
+      home: Scaffold(
+        appBar: SmartAppBar(),
+        body:  Column(
+          
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(height: 10.0,),
+              CardComponent(data: data,)
+            ],
+          ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: _incrementCounter,
+          tooltip: 'Increment',
+          child: const Icon(Icons.add),
+        ), 
+      ),
     );
   }
 }
