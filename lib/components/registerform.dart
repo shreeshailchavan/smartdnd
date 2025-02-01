@@ -35,29 +35,29 @@ class UserRegistrationFormState extends State<UserRegistrationForm> {
 
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Colors.grey.shade100),
+      decoration: BoxDecoration(color: Colors.white),
       child: Center(
         child: Card(
           margin: EdgeInsets.all(10.0),
-          elevation: 5.0,
-          clipBehavior: Clip.hardEdge,
-          shadowColor: Colors.grey,
-          // color: Colors.,
+          elevation: 0.0,
+          clipBehavior: Clip.none,
+          color: Colors.white,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(10.0))),
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
             width: double.maxFinite,
-            height: 350.0,
+            height: 450.0,
             child: Column(
               children: <Widget>[
+                Image.asset("assets/images/icons8-authentication-48.png"),
                 Text(
                   "Register on SmartDnD",
                   style: GoogleFonts.teko(
                       fontWeight: FontWeight.w500, fontSize: 30.0),
                 ),
                 SizedBox(
-                  height: 10.0,
+                  height: 30.0,
                 ),
                 ReactiveForm(
                     formGroup: registrationForm,
@@ -65,7 +65,7 @@ class UserRegistrationFormState extends State<UserRegistrationForm> {
                       children: <Widget>[
                         ReactiveTextField(
                           formControlName: 'username',
-                          decoration: InputDecoration(labelText: 'username'),
+                          decoration: InputDecoration(labelText: 'username',border:OutlineInputBorder(borderRadius: BorderRadius.circular(8.0))),
                           validationMessages: {
                             ValidationMessage.required: (error) =>
                                 'Name is required',
@@ -78,7 +78,7 @@ class UserRegistrationFormState extends State<UserRegistrationForm> {
                         ),
                         ReactiveTextField<String>(
                           formControlName: 'password',
-                          decoration: InputDecoration(labelText: 'password'),
+                          decoration: InputDecoration(labelText: 'username',border:OutlineInputBorder(borderRadius: BorderRadius.circular(8.0))),
                           validationMessages: {
                             ValidationMessage.required: (error) =>
                                 'Password is required',
@@ -87,34 +87,36 @@ class UserRegistrationFormState extends State<UserRegistrationForm> {
                           },
                         ),
                         SizedBox(
-                          height: 20.0,
+                          height: 25.0,
                         ),
-                        InkWell(
-                            splashFactory: InkSplash.splashFactory,
-                            splashColor: Colors.white54,
-                            child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.black87, // Button color
-                                  foregroundColor: Colors.white, // Text color
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 20,
-                                      vertical: 12), // Button padding
-                                  textStyle: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight:
-                                          FontWeight.bold), // Font styling
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                        12), // Rounded corners
+                        Container(
+                          width: double.infinity,
+                          child: InkWell(
+                              splashFactory: InkSplash.splashFactory,
+                              splashColor: Colors.blueGrey,
+                              child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.indigoAccent, // Button color
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20,
+                                        vertical: 12), // Button padding
+                                    textStyle: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight:
+                                            FontWeight.bold), // Font styling
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          12), // Rounded corners
+                                    ),
                                   ),
-                                ),
-                                onPressed: () => isLoggedIn,
-                                child: Text(
-                                  "Submit",
-                                  style: GoogleFonts.roboto(
-                                    color: Colors.white60,
-                                  ),
-                                )))
+                                  onPressed: () => isLoggedIn,
+                                  child: Text(
+                                    "Submit",
+                                    style: GoogleFonts.roboto(
+                                      color: Colors.white,
+                                    ),
+                                  ))),
+                        )
                       ],
                     ))
               ],

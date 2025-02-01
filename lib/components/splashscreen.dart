@@ -25,7 +25,7 @@ class SplashScreen extends StatelessWidget {
                       child: TextButton(
                         onPressed: () {
                           Navigator.pushNamed(
-                              context, '/home'); // Navigate using named route
+                              context, '/register'); // Navigate using named route
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero, // Remove default padding
@@ -44,7 +44,7 @@ class SplashScreen extends StatelessWidget {
                       width: double.infinity,
                       decoration: BoxDecoration(
                   // color: Colors.indigo,
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(5),
                 ),
                       child: TextButton(
                         onPressed: () {
