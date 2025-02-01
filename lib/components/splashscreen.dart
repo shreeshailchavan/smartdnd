@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:smartdnd/main.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    void goToHome() {
-      Navigator.pushNamed(context, "/home");
-      Navigator.pop(context);
-    }
-
     return Material(
       child: Stack(
         children: <Widget>[
@@ -18,33 +12,62 @@ class SplashScreen extends StatelessWidget {
             left: 20,
             right: 20, // Adjust as needed
             child: InkWell(
-              splashColor: Colors.grey,
+              splashColor: Colors.black87,
               splashFactory: InkRipple.splashFactory,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.indigoAccent,
+              child:  Column(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Column(
-                  children: [
-                    TextButton(
-                      onPressed: () {
-            Navigator.pushNamed(context, '/home'); // Navigate using named route
-          },
-                      style: TextButton.styleFrom(
-      padding: EdgeInsets.zero, // Remove default padding
-      shape: RoundedRectangleBorder(), // Prevents extra margin
-    ),
-                      child: Text(
-                        'Sign Up',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                        textAlign: TextAlign.center,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, '/home'); // Navigate using named route
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero, // Remove default padding
+                         shape:
+                              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Prevents extra margin
+                        ),
+                        child: Text(
+                          'Log In',
+                          style: TextStyle(color: Colors.black87, fontSize: 16),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10.0,),
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                  // color: Colors.indigo,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, '/home'); // Navigate using named route
+                        },
+                        style: TextButton.styleFrom(
+                          
+                          backgroundColor: Colors.indigoAccent,
+                          padding: EdgeInsets.zero, // Remove default padding
+                          shape:
+                              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Prevents extra margin
+                        ),
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
           ),
         ],
       ),

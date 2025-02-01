@@ -29,7 +29,6 @@ class UserRegistrationFormState extends State<UserRegistrationForm> {
 
   //go to home page if logged in
   void isLoggedIn() {
-    // MaterialPageRoute(builder: (context) => MyHomePage(title: "SmartDND"));
     Navigator.pushNamed(context, '/home');
     Navigator.pop(context);
   }

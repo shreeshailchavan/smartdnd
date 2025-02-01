@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smartdnd/components/appbar.dart';
 import 'package:smartdnd/components/card.dart';
+import 'package:smartdnd/components/registerform.dart';
 import 'package:smartdnd/components/splashscreen.dart';
 
 void main() {
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
 
       routes:{
         '/':(context) => SplashScreen(),
-        '/home':(context) => MyHomePage(title: "SmartDND")
+        '/home':(context) => MyHomePage(title: "SmartDND"),
+        '/register':(context) => RegisterForm()
       }
     );
   }
@@ -43,7 +45,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   Map<String,dynamic> data = {
     "title":"Add Device",
     "desc":"Have a pre-flashed that is ready to be connected to EchoBlock?",
@@ -53,11 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
     "font":GoogleFonts.roboto(fontSize: 15,fontWeight: FontWeight.w300,color: Colors.white)
   };
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  // void _incrementCounter() {
+  //   setState(() {
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -75,11 +75,6 @@ class _MyHomePageState extends State<MyHomePage> {
               CardComponent(data: data,)
             ],
           ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: _incrementCounter,
-          tooltip: 'Increment',
-          child: const Icon(Icons.add),
-        ), 
       ),
     );
   }
